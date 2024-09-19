@@ -1,0 +1,46 @@
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin crisp-font($color: inherit) {
+  color: $color;
+  text-shadow: 0 0 1px rgb(0 0 0 / 10%);
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin linear-gradient(
+  $direction,
+  $start-color,
+  $end-color,
+  $start-percent,
+  $end-percent
+) {
+  background: $start-color;
+  background: linear-gradient(
+    $direction,
+    $start-color $start-percent,
+    $end-color $end-percent
+  );
+}
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}

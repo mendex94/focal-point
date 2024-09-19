@@ -1,0 +1,103 @@
+@import "mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: var(--font-inter-tight);
+  line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizelegibility;
+
+  @include font-smoothing(on);
+  @include crisp-font(#333);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-smoothing(on);
+
+  letter-spacing: -0.03em;
+}
+
+p {
+  text-rendering: optimizelegibility;
+}
+
+small {
+  font-size: 0.8em;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: "Inter var", var(--font-inter-tight), sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" 14;
+  }
+}
