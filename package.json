@@ -11,6 +11,7 @@
     "lint:style:fix": "stylelint '**/*.scss' --fix"
   },
   "dependencies": {
+    "convex": "^1.16.0",
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18"
