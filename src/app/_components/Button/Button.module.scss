@@ -1,0 +1,73 @@
+@import "../../_styles/_mixins";
+
+$button-width: 100%;
+$button-height: 51px;
+$button-padding: 16px 24px;
+$button-gap: 8px;
+$button-border-radius: 8px;
+$primary-button-gradient-start: #0796d3;
+$primary-button-gradient-end: #53c0f0;
+$secondary-button-background-color: #e7eefb;
+$danger-button-gradient-start: #d30707;
+$danger-button-gradient-end: #f05353;
+
+.button {
+  @include flex-center;
+
+  border: none;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  gap: $button-gap;
+  height: $button-height;
+  padding: $button-padding;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: $button-width;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media (width <= 768px) {
+    font-size: 14px;
+    height: 45px;
+    padding: 12px 20px;
+  }
+
+  @media (width <= 480px) {
+    font-size: 12px;
+    height: 40px;
+    padding: 10px 16px;
+  }
+
+  &.primary {
+    @include linear-gradient(
+      90deg,
+      $primary-button-gradient-start,
+      $primary-button-gradient-end,
+      0%,
+      68.65%
+    );
+
+    color: white;
+  }
+
+  &.danger {
+    @include linear-gradient(
+      90deg,
+      $danger-button-gradient-start,
+      $danger-button-gradient-end,
+      0%,
+      68.65%
+    );
+
+    color: white;
+  }
+
+  &.secondary {
+    background-color: $secondary-button-background-color;
+    color: black;
+  }
+}
