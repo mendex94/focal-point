@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:style": "stylelint '**/*.scss'",
+    "lint:style:fix": "stylelint '**/*.scss' --fix"
   },
   "dependencies": {
     "next": "14.2.12",
@@ -21,6 +23,9 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.12",
     "sass": "^1.79.1",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
     "typescript": "^5"
   }
 }
