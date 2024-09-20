@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter_Tight as InterTight } from 'next/font/google'
-import Providers from '@components/Providers'
+import Providers from '@/components/Providers'
 import './_styles/globals.scss'
 
 const InterTightFont = InterTight({
