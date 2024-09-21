@@ -1,0 +1,43 @@
+@import "../../_styles/_breakpoints.scss";
+
+.header {
+  @include max-breakpoint("md") {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @include breakpoint("md") {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
+    margin: auto;
+    max-width: 1366px;
+    border-bottom: 1px solid rgba(215, 221, 233, 1);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.04px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.date {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.container {
+  display: flex;
+  gap: 0.5rem;
+}
