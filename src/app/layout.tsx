@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter_Tight as InterTight } from 'next/font/google'
 import Providers from '@/components/Providers'
+import { Header } from '@/components/header'
 import './_styles/globals.scss'
 
 const InterTightFont = InterTight({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
   variable: '--font-inter-tight',
 })
 
@@ -23,7 +24,10 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="pt-BR">
-        <body className={InterTightFont.variable}>{children}</body>
+        <body className={InterTightFont.variable}>
+          <Header />
+          {children}
+        </body>
       </html>
     </Providers>
   )
