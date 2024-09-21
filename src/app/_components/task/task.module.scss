@@ -1,0 +1,57 @@
+@import "../../_styles/_breakpoints.scss";
+
+.container {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px dashed rgba(215, 221, 233, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    background-color: rgba(247, 249, 253, 1);
+    cursor: pointer;
+  }
+}
+
+.label {
+  display: flex;
+  gap: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.button {
+  background: transparent;
+  border: none;
+  color: rgba(176, 187, 209, 1);
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    color: red;
+  }
+}
+
+.modalButtons {
+  @include max-breakpoint("md") {
+    flex-direction: column;
+  }
+  display: flex;
+  gap: 1rem;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
