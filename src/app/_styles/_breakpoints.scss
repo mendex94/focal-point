@@ -1,0 +1,71 @@
+// _breakpoints.scss
+
+// Tailwind's default breakpoints
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px,
+);
+
+// Mixin for min-width breakpoints
+@mixin breakpoint($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$size}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Mixins for max-width breakpoints (for 'smaller than' scenarios)
+@mixin max-breakpoint($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (max-width: map-get($breakpoints, $size) - 1px) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$size}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin max-md {
+  @include max-breakpoint("md") {
+    @content;
+  }
+}
+
+// Specific breakpoint mixins
+@mixin sm {
+  @include breakpoint("sm") {
+    @content;
+  }
+}
+
+@mixin md {
+  @include breakpoint("md") {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include breakpoint("lg") {
+    @content;
+  }
+}
+
+@mixin xl {
+  @include breakpoint("xl") {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @include breakpoint("2xl") {
+    @content;
+  }
+}

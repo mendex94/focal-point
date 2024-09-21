@@ -32,14 +32,12 @@ html:focus-within {
 
 body {
   background-color: #fff;
-  color: #333;
   font-family: var(--font-inter-tight);
   line-height: 1.5;
   min-height: 100vh;
   text-rendering: optimizelegibility;
 
   @include font-smoothing(on);
-  @include crisp-font(#333);
 }
 
 a:not([class]) {
