@@ -1,0 +1,36 @@
+@import "../../_styles/_breakpoints.scss";
+
+.container {
+  @include max-breakpoint("md") {
+    width: 100%;
+  }
+
+  @include breakpoint("md") {
+    max-width: 450px;
+  }
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.buttonContainer {
+  @include max-breakpoint("md") {
+    flex-direction: column;
+  }
+  display: flex;
+  gap: 1rem;
+}
+
+.formError {
+  color: red;
+}
